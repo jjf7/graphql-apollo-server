@@ -16,7 +16,7 @@ const server = new ApolloServer({
   resolvers,
 });
 
-server.listen().then(({ url, subscriptionsUrl }) => {
+server.listen({ port: process.env.PORT || 4000 }).then(({ url, subscriptionsUrl }) => {
   console.log(`Server running on ${url}`);
   console.log(`WS at ${subscriptionsUrl}`);
 });
